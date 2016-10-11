@@ -6,9 +6,11 @@ sspanel v3 CT版
 - 新增 节点vip等级
 - 新增 节点列表只展示当前用户VIP等级以下的节点
 
+## 2016-10-11
+- 修改Mu V3 API,流量用完用户端口关闭
 
 
-# ss-panel v3
+# ss-panel v3 原版安装参考，仅使用新的sspanel.sql代替原来的db.sql
 
 Let's talk about cat.  Based on [LightFish](https://github.com/Pongtan/LightFish).
 
