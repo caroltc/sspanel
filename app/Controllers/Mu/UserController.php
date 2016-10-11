@@ -16,7 +16,7 @@ class UserController extends BaseController
     // User List
     public function index($request, $response, $args)
     {
-        $users = User::all();
+        $users = User::whereraw('transfer_enable > d')->where('user_type', '<>', 'over')->get();
         $res = [
             "ret" => 1,
             "msg" => "ok",

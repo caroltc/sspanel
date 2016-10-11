@@ -1,4 +1,0 @@
-# Pongtan framework for LightFish
-[![Build Status](https://travis-ci.org/Pongtan/framework.svg?branch=master)](https://travis-ci.org/Pongtan/framework) [![Coverage Status](https://coveralls.io/repos/github/Pongtan/framework/badge.svg?branch=master)](https://coveralls.io/github/Pongtan/framework?branch=master) [![Latest Stable Version](https://poser.pugx.org/pongtan/framework/v/stable)](https://packagist.org/packages/pongtan/framework) [![Latest Unstable Version](https://poser.pugx.org/pongtan/framework/v/unstable)](https://packagist.org/packages/pongtan/framework) [![License](https://poser.pugx.org/pongtan/framework/license)](https://packagist.org/packages/pongtan/framework) [![Total Downloads](https://poser.pugx.org/pongtan/framework/downloads)](https://packagist.org/packages/pongtan/framework)
-## About 
-Pongtan framework

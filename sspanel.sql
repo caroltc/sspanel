@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: 2016-10-10 15:40:38
+-- Generation Time: 2016-10-11 17:39:12
 -- 服务器版本： 5.7.15-log
 -- PHP Version: 5.6.26
 
@@ -202,7 +202,7 @@ CREATE TABLE IF NOT EXISTS `user` (
   `method` varchar(64) NOT NULL DEFAULT 'rc4-md5',
   `is_email_verify` tinyint(4) NOT NULL DEFAULT '0',
   `reg_ip` varchar(128) NOT NULL DEFAULT '127.0.0.1',
-  `user_type` enum('normal','vip') NOT NULL DEFAULT 'normal' COMMENT '用户类型（普通用户, VIP用户）',
+  `user_type` enum('normal','vip','over') NOT NULL DEFAULT 'normal' COMMENT '用户类型（普通用户, VIP用户）',
   `vip_level` tinyint(2) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
