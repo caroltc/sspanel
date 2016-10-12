@@ -1,14 +1,14 @@
 # sspanel-CT
 sspanel v3 CT版
+参考网站：91START [![www.95431.space](http://www.95431.space)]
 
-##2016-10-10
+## 2016-10-11
+- 修改Mu V3 API,流量用完用户端口自动关闭
+
+## 2016-10-10
 - 新增 用户vip分类和等级
 - 新增 节点vip等级
 - 新增 节点列表只展示当前用户VIP等级以下的节点
-
-## 2016-10-11
-- 修改Mu V3 API,流量用完用户端口关闭
-
 
 # ss-panel v3 原版安装参考，仅使用新的sspanel.sql代替原来的db.sql
 
