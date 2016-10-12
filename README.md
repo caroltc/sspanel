@@ -1,6 +1,6 @@
 # sspanel-CT
 sspanel v3 CT版
-参考网站：91START [![www.95431.space](http://www.95431.space)]
+参考网站：91START [www.95431.space](http://www.95431.space)
 
 ## 2016-10-11
 - 修改Mu V3 API,流量用完用户端口自动关闭
