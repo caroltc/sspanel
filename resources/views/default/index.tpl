@@ -32,7 +32,7 @@
                     <h5 class="center">Super Fast</h5>
 
                     <p class="light">
-                        Bleeding edge techniques using Asynchronous I/O and Event-driven programming.
+                        节点都是口碑很好的服务商，稳定快速
                     </p>
                 </div>
             </div>
@@ -43,7 +43,7 @@
                     <h5 class="center">Open Source</h5>
 
                     <p class="light">
-                        Totally free and open source. A worldwide community devoted to deliver bug-free code and long-term support.
+                        轻量修改的sspanel，只为更好服务，完全开源(<a href="https://github.com/caroltc/sspanel" target="_blank">sspanel CT</a>)
                     </p>
                 </div>
             </div>
@@ -54,7 +54,7 @@
                     <h5 class="center">Easy to work with</h5>
 
                     <p class="light">
-                        Avaliable on multiple platforms, including PC, MAC, Mobile (Android and iOS) and Routers (OpenWRT).
+                        轻松的连接您的iphone, ipad, mac 或者安卓，pc，只需一个shadowsockets客户端即可
                     </p>
                 </div>
             </div>

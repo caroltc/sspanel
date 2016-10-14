@@ -4,6 +4,7 @@
 			<div class="col l6 s12">
 				<h5 class="white-text">关于</h5>
 				<p class="grey-text text-lighten-4">本站提供某种帐号用于科学上网.</p>
+				<p class="grey-text text-lighten-4">请遵守中国法律法规，禁止浏览传播非法站点信息.</p>
 
 
 			</div>
