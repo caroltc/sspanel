@@ -43,7 +43,7 @@
                     <h5 class="center">Open Source</h5>
 
                     <p class="light">
-                        轻量修改的sspanel，只为更好服务，完全开源(<a href="https://github.com/caroltc/sspanel" target="_blank">sspanel CT</a>)
+                        轻量修改的sspanel，平滑升级，无损兼容，只为更好服务，并且完全开源(<a href="https://github.com/caroltc/sspanel" target="_blank">sspanel CT</a>)
                     </p>
                 </div>
             </div>

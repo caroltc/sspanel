@@ -24,14 +24,14 @@
 				<h5 class="white-text">页面</h5>
 				<ul>
 					<li><a class="white-text" href="/code">邀请码</a></li>
-					<li><a class="white-text" href="/tos">TOS</a></li>
+					<li><a class="white-text" href="/tos">用户协议</a></li>
 				</ul>
 			</div>
 		</div>
 	</div>
 	<div class="footer-copyright">
 		<div class="container">
-			&copy; {$config["appName"]}  Powered by <a class="orange-text text-lighten-3" href="https://github.com/orvice/ss-panel">ss-panel</a> {$config["version"]}
+			&copy; {$config["appName"]}  Powered by <a class="orange-text text-lighten-3" href="https://github.com/orvice/ss-panel">ss-panel</a>
 		 Theme by <a class="orange-text text-lighten-3" href="http://materializecss.com">Materialize</a>
 		</div>
 		<div style="display:none;">
