@@ -17,12 +17,17 @@ class UserController extends BaseController
     public function index($request, $response, $args)
     {
         $users = User::all();
+        $login_expire_time = Config::get('check_login_expire_time', 0);
 		//whereraw('transfer_enable > d')->where('user_type', '<>', 'over')->get();
         foreach ($users as $key => $user) {
-		if ($user['transfer_enable'] < $user['d'] || $user['user_type'] == 'over') {
-			$users[$key]['enable'] = 0;
-		}
-	}
+		    if ($user['transfer_enable'] < $user['d'] || $user['user_type'] == 'over') {
+			    $users[$key]['enable'] = 0;
+		    }
+            if ($user['enable'] == 1 && $login_expire_time != 0 && $user['user_type'] == 'normal' && $user['vip_level'] == 0 && (time() - $user['last_check_in_time'] > $login_expire_time * 86400)) {
+                $users[$key]['enable'] = 0;
+            }
+
+	   }
 	$res = [
             "ret" => 1,
             "msg" => "ok",

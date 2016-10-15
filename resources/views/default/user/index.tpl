@@ -75,6 +75,9 @@
                     </div>
                     <!-- /.box-header -->
                     <div class="box-body">
+                        {if $user->user_type == 'normal' && $user->vip_level == 0 && (time() - $user->lastCheckInTime()) > $config['check_login_expire_time'] * 86400 }
+                            <p> 注意：您超过{$config['check_login_expire_time']}天未签到，端口已经关闭，签到后自动恢复。</p>
+                        {/if}
                         <p> 每{$config['checkinTime']}小时可以签到一次。</p>
 
                         <p>上次签到时间：<code>{$user->lastCheckInTime()}</code></p>
