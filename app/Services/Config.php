@@ -16,6 +16,7 @@ class Config extends PongtanConfig
             "checkinTime" => self::get("checkinTime"),
             "checkinMin" => self::get("checkinMin"),
             "checkinMax" => self::get("checkinMax"),
+            "check_login_expire_time" => self::get("check_login_expire_time"),
         ];
     }
 
