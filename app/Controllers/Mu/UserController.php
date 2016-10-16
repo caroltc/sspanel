@@ -23,7 +23,7 @@ class UserController extends BaseController
 		    if ($user['transfer_enable'] < $user['d'] || $user['user_type'] == 'over') {
 			    $users[$key]['enable'] = 0;
 		    }
-            if ($user['enable'] == 1 && $login_expire_time != 0 && $user['user_type'] == 'normal' && $user['vip_level'] == 0 && (time() - $user['last_check_in_time'] > $login_expire_time * 86400)) {
+            if ($user['enable'] == 1 && (time() - strtotime($user['reg_date']) >  $login_expire_time * 86400 ) && $login_expire_time != 0 && $user['user_type'] == 'normal' && $user['vip_level'] == 0 && (time() - $user['last_check_in_time'] > $login_expire_time * 86400)) {
                 $users[$key]['enable'] = 0;
             }
 
