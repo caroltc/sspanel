@@ -32,6 +32,7 @@
                                 <th>邀请者</th>
                                 <th>用户类别</th>
                                 <th>vip_level</th>
+                                <th>端口状态</th>
                                 <th>操作</th>
                             </tr>
                             {foreach $users as $user}
@@ -49,6 +50,13 @@
                                 <th>{$user->ref_by}</th>
                                 <th>{$user->user_type}</th>
                                 <th>{$user->vip_level}</th>
+                                <th>
+                                    {if $user->user_type == 'normal' && $user->vip_level == 0 && (time() - $user->lastCheckInTime()) > $config['check_login_expire_time'] * 86400 }
+                                        关闭
+                                        {else}
+                                        正常
+                                    {/if}
+                                </th>
                                 <td>
                                     <a class="btn btn-info btn-sm" href="/admin/user/{$user->id}/edit">编辑</a>
                                     <a class="btn btn-danger btn-sm" id="delete" value="{$user->id}" href="/admin/user/{$user->id}/delete">删除</a>
