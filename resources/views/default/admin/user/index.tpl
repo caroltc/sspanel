@@ -53,6 +53,8 @@
                                 <th>
                                     {if $user->user_type == 'normal' && $user->vip_level == 0 && (time() - $user->lastCheckInTime()) > $config['check_login_expire_time'] * 86400 }
                                         关闭
+                                        {elseif $user->user_type == 'over' || $user->enable == 0}
+                                        关闭
                                         {else}
                                         正常
                                     {/if}
