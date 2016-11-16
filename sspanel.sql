@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.4.15.8
--- https://www.phpmyadmin.net
+-- version phpStudy 2014
+-- http://www.phpmyadmin.net
 --
--- Host: localhost
--- Generation Time: 2016-10-11 17:39:12
--- 服务器版本： 5.7.15-log
--- PHP Version: 5.6.26
+-- 主机: 127.0.0.1
+-- 生成日期: 2016-11-16 21:06:40
+-- 服务器版本: 5.5.36-log
+-- PHP 版本: 5.6.24
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -14,10 +14,10 @@ SET time_zone = "+00:00";
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
+/*!40101 SET NAMES utf8 */;
 
 --
--- Database: `sspanel`
+-- 数据库: `sspanel`
 --
 
 -- --------------------------------------------------------
@@ -27,12 +27,13 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE IF NOT EXISTS `sp_config` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `key` varchar(128) NOT NULL,
   `value` text NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `updated_at` timestamp NOT NULL DEFAULT '2015-11-01 00:00:00'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `updated_at` timestamp NOT NULL DEFAULT '2015-11-01 00:00:00',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
 
 -- --------------------------------------------------------
 
@@ -41,11 +42,12 @@ CREATE TABLE IF NOT EXISTS `sp_config` (
 --
 
 CREATE TABLE IF NOT EXISTS `sp_email_verify` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `email` varchar(32) NOT NULL,
   `token` varchar(64) NOT NULL,
-  `expire_at` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `expire_at` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=46 ;
 
 -- --------------------------------------------------------
 
@@ -54,11 +56,12 @@ CREATE TABLE IF NOT EXISTS `sp_email_verify` (
 --
 
 CREATE TABLE IF NOT EXISTS `sp_log` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `type` varchar(16) NOT NULL,
   `msg` text NOT NULL,
-  `created_time` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `created_time` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -67,13 +70,14 @@ CREATE TABLE IF NOT EXISTS `sp_log` (
 --
 
 CREATE TABLE IF NOT EXISTS `ss_checkin_log` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `user_id` int(11) NOT NULL,
   `checkin_at` int(11) NOT NULL,
   `traffic` double NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
-  `updated_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
 
 -- --------------------------------------------------------
 
@@ -82,7 +86,7 @@ CREATE TABLE IF NOT EXISTS `ss_checkin_log` (
 --
 
 CREATE TABLE IF NOT EXISTS `ss_chg_code` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `code` varchar(128) NOT NULL,
   `time` int(11) NOT NULL,
   `traffic` bigint(20) NOT NULL,
@@ -90,8 +94,9 @@ CREATE TABLE IF NOT EXISTS `ss_chg_code` (
   `add_time` int(11) NOT NULL,
   `status` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
-  `use_time` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `use_time` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -100,12 +105,14 @@ CREATE TABLE IF NOT EXISTS `ss_chg_code` (
 --
 
 CREATE TABLE IF NOT EXISTS `ss_invite_code` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `code` varchar(128) NOT NULL,
   `user_id` int(11) NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `updated_at` timestamp NOT NULL DEFAULT '2015-11-01 00:00:00'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `updated_at` timestamp NOT NULL DEFAULT '2015-11-01 00:00:00',
+  PRIMARY KEY (`id`),
+  KEY `user_id` (`user_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=63 ;
 
 -- --------------------------------------------------------
 
@@ -114,7 +121,7 @@ CREATE TABLE IF NOT EXISTS `ss_invite_code` (
 --
 
 CREATE TABLE IF NOT EXISTS `ss_node` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(128) NOT NULL,
   `type` int(3) NOT NULL,
   `server` varchar(128) NOT NULL,
@@ -125,8 +132,9 @@ CREATE TABLE IF NOT EXISTS `ss_node` (
   `status` varchar(128) NOT NULL,
   `offset` int(11) NOT NULL DEFAULT '0',
   `sort` int(3) NOT NULL,
-  `vip_level` tinyint(2) NOT NULL DEFAULT '0' COMMENT 'VIP可用等级'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `vip_level` tinyint(2) NOT NULL DEFAULT '0' COMMENT 'VIP可用等级',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8mb4 AUTO_INCREMENT=3 ;
 
 -- --------------------------------------------------------
 
@@ -135,12 +143,13 @@ CREATE TABLE IF NOT EXISTS `ss_node` (
 --
 
 CREATE TABLE IF NOT EXISTS `ss_node_info_log` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `node_id` int(11) NOT NULL,
   `uptime` float NOT NULL,
   `load` varchar(32) NOT NULL,
-  `log_time` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `log_time` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2442 ;
 
 -- --------------------------------------------------------
 
@@ -149,11 +158,12 @@ CREATE TABLE IF NOT EXISTS `ss_node_info_log` (
 --
 
 CREATE TABLE IF NOT EXISTS `ss_node_online_log` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `node_id` int(11) NOT NULL,
   `online_user` int(11) NOT NULL,
-  `log_time` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `log_time` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -162,12 +172,13 @@ CREATE TABLE IF NOT EXISTS `ss_node_online_log` (
 --
 
 CREATE TABLE IF NOT EXISTS `ss_password_reset` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `email` varchar(32) NOT NULL,
   `token` varchar(128) NOT NULL,
   `init_time` int(11) NOT NULL,
-  `expire_time` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `expire_time` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
 
 -- --------------------------------------------------------
 
@@ -176,7 +187,7 @@ CREATE TABLE IF NOT EXISTS `ss_password_reset` (
 --
 
 CREATE TABLE IF NOT EXISTS `user` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `user_name` varchar(128) CHARACTER SET utf8mb4 NOT NULL,
   `email` varchar(32) NOT NULL,
   `pass` varchar(64) NOT NULL,
@@ -194,7 +205,7 @@ CREATE TABLE IF NOT EXISTS `user` (
   `last_get_gift_time` int(11) NOT NULL DEFAULT '0',
   `last_check_in_time` int(11) NOT NULL DEFAULT '0',
   `last_rest_pass_time` int(11) NOT NULL DEFAULT '0',
-  `reg_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `reg_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `invite_num` int(8) NOT NULL DEFAULT '0',
   `is_admin` int(2) NOT NULL DEFAULT '0',
   `ref_by` int(11) NOT NULL DEFAULT '0',
@@ -203,8 +214,12 @@ CREATE TABLE IF NOT EXISTS `user` (
   `is_email_verify` tinyint(4) NOT NULL DEFAULT '0',
   `reg_ip` varchar(128) NOT NULL DEFAULT '127.0.0.1',
   `user_type` enum('normal','vip','over') NOT NULL DEFAULT 'normal' COMMENT '用户类型（普通用户, VIP用户）',
-  `vip_level` tinyint(2) NOT NULL DEFAULT '0'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `vip_level` tinyint(2) NOT NULL DEFAULT '0',
+  `msg` text COMMENT '用户消息',
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `email` (`email`),
+  UNIQUE KEY `port` (`port`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=61 ;
 
 -- --------------------------------------------------------
 
@@ -213,12 +228,13 @@ CREATE TABLE IF NOT EXISTS `user` (
 --
 
 CREATE TABLE IF NOT EXISTS `user_token` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `token` varchar(256) NOT NULL,
   `user_id` int(11) NOT NULL,
   `create_time` int(11) NOT NULL,
-  `expire_time` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `expire_time` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -227,170 +243,17 @@ CREATE TABLE IF NOT EXISTS `user_token` (
 --
 
 CREATE TABLE IF NOT EXISTS `user_traffic_log` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `user_id` int(11) NOT NULL,
   `u` int(11) NOT NULL,
   `d` int(11) NOT NULL,
   `node_id` int(11) NOT NULL,
   `rate` float NOT NULL,
   `traffic` varchar(32) NOT NULL,
-  `log_time` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `log_time` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
---
--- Indexes for dumped tables
---
-
---
--- Indexes for table `sp_config`
---
-ALTER TABLE `sp_config`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `sp_email_verify`
---
-ALTER TABLE `sp_email_verify`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `sp_log`
---
-ALTER TABLE `sp_log`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `ss_checkin_log`
---
-ALTER TABLE `ss_checkin_log`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `ss_chg_code`
---
-ALTER TABLE `ss_chg_code`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `ss_invite_code`
---
-ALTER TABLE `ss_invite_code`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `user_id` (`user_id`);
-
---
--- Indexes for table `ss_node`
---
-ALTER TABLE `ss_node`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `ss_node_info_log`
---
-ALTER TABLE `ss_node_info_log`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `ss_node_online_log`
---
-ALTER TABLE `ss_node_online_log`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `ss_password_reset`
---
-ALTER TABLE `ss_password_reset`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `user`
---
-ALTER TABLE `user`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `email` (`email`),
-  ADD UNIQUE KEY `port` (`port`);
-
---
--- Indexes for table `user_token`
---
-ALTER TABLE `user_token`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `user_traffic_log`
---
-ALTER TABLE `user_traffic_log`
-  ADD PRIMARY KEY (`id`);
-
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `sp_config`
---
-ALTER TABLE `sp_config`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT for table `sp_email_verify`
---
-ALTER TABLE `sp_email_verify`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT for table `sp_log`
---
-ALTER TABLE `sp_log`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT for table `ss_checkin_log`
---
-ALTER TABLE `ss_checkin_log`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT for table `ss_chg_code`
---
-ALTER TABLE `ss_chg_code`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT for table `ss_invite_code`
---
-ALTER TABLE `ss_invite_code`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT for table `ss_node`
---
-ALTER TABLE `ss_node`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT for table `ss_node_info_log`
---
-ALTER TABLE `ss_node_info_log`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT for table `ss_node_online_log`
---
-ALTER TABLE `ss_node_online_log`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT for table `ss_password_reset`
---
-ALTER TABLE `ss_password_reset`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT for table `user`
---
-ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT for table `user_token`
---
-ALTER TABLE `user_token`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT for table `user_traffic_log`
---
-ALTER TABLE `user_traffic_log`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

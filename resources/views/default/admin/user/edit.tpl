@@ -160,7 +160,7 @@
                             </div>
 
 
- <div class="row">
+                            <div class="row">
                                 <fieldset class="col-sm-6">
                                     <legend>VIP</legend>
                                     <div class="form-group">
@@ -182,9 +182,16 @@
                                         </div>
                                     </div>
                                 </fieldset>
+                                <fieldset class="col-sm-6">
+                                    <legend>用户消息</legend>
+                                    <div class="form-group">
+                                        <div class="col-sm-12">
+                                           <textarea class="form-control" id="msg" rows="4"
+                                          placeholder="Enter ...">{$user->msg}</textarea>
+                                        </div>
+                                    </div>                                    
+                                </fieldset>
                             </div>
-
- 
                        </div>
                     </div>
                     <!-- /.box-body -->
@@ -220,7 +227,8 @@
                     is_admin: $("#is_admin").val(),
                     ref_by: $("#ref_by").val(),
                     user_type: $("#user_type").val(),
-                    vip_level: $("#vip_level").val()
+                    vip_level: $("#vip_level").val(),
+                    msg: $("#msg").val(),
                 },
                 success: function (data) {
                     if (data.ret) {

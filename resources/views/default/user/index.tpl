@@ -94,6 +94,25 @@
                 </div>
                 <!-- /.box -->
             </div>
+                       <div class="col-md-6">
+                <div class="box box-primary">
+                    <div class="box-header">
+                        <i class="fa fa-pencil"></i>
+
+                        <h3 class="box-title">用户消息</h3>
+                    </div>
+                    <!-- /.box-header -->
+                    <div class="box-body">
+                        {if $user->msg}
+                        {$user->msg}
+                        {else}
+                        no message
+                        {/if}
+                    </div>
+                    <!-- /.box-body -->
+                </div>
+                <!-- /.box -->
+            </div>
             <!-- /.col (right) -->
 
             <div class="col-md-6">

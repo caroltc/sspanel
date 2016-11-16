@@ -51,6 +51,7 @@ class UserController extends AdminController
         $user->ref_by = $request->getParam('ref_by');
         $user->user_type = $request->getParam('user_type');
         $user->vip_level = $request->getParam('vip_level');
+        $user->msg = $request->getParam('msg');
         if (!$user->save()) {
             $rs['ret'] = 0;
             $rs['msg'] = "修改失败";

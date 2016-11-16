@@ -2,6 +2,9 @@
 sspanel v3 CT版
 参考网站：91START [www.95431.space](http://www.95431.space)
 
+## 2016-11-16
+- 添加用户消息
+
 ## 2016-10-15
 - 修改Mu V3 API,超过指定时间未签到，则封闭端口节约资源，签到后恢复,.env文件添加check_login_expire_time = "3" // 未签到多久（天）则封端口
 
