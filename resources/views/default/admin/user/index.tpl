@@ -16,7 +16,6 @@
             <div class="col-xs-12">
                 <div class="box">
                     <div class="box-body table-responsive no-padding">
-                        {$users->render()}
                         <table class="table table-hover">
                             <tr>
                                 <th>ID</th>
@@ -55,6 +54,8 @@
                                         关闭
                                         {elseif $user->user_type == 'over' || $user->enable == 0}
                                         关闭
+                                        {elseif $user->transfer_enable <= $user->d}
+                                        关闭
                                         {else}
                                         正常
                                     {/if}
@@ -66,7 +67,6 @@
                             </tr>
                             {/foreach}
                         </table>
-                        {$users->render()}
                     </div><!-- /.box-body -->
                 </div><!-- /.box -->
             </div>
